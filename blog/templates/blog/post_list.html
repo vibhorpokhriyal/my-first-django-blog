@@ -10,21 +10,12 @@
 </head>
 <body>
     <div><a href="">Dunder Py Blog</a></div>
-
-    <div>
-        <p>published: 02.24.2018 18:16</p>
-        <h2><a href="">First Post</a></h2>
-        <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nam iusto optio porro expedita architecto cumque omnis labore vero, laudantium velit et ab ipsam quam odio ut! Pariatur, omnis earum.
-        </p>
-    </div>
-    
-    <div>
-            <p>published: 02.24.2018 18:16</p>
-            <h2><a href="">Second Post</a></h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nam iusto optio porro expedita architecto cumque omnis labore vero, laudantium velit et ab ipsam quam odio ut! Pariatur, omnis earum.
-            </p>
+    {% for post in posts %}
+        <div>
+            <p>Published:{{post.publish_date}}</p>
+            <h1><a href="">{{post.title}}</a></h1>
+            <p>{{post.text|linebreaksbr}}</p>
         </div>
+    {% endfor %}
 </body>
 </html>
